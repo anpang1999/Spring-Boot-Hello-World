@@ -4,15 +4,15 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class GreetingService {
-    private final GreetingRepository repo;
+    private final GreetingRepository greetingRepository;
 
-    public GreetingService(GreetingRepository repo) {
-        this.repo = repo;
+    public GreetingService(GreetingRepository greetingRepository) {
+        this.greetingRepository = greetingRepository;
     }
 
-    public String getMessage(String lang) {
-        return repo.findByLangCode(lang)
+    public String getMessageByLang(String langCode) {
+        return greetingRepository.findByLangCode(langCode)
                 .map(Greeting::getMessage)
-                .orElse("지원하지 않는 언어입니다.");
+                .orElse("지원하지 않는 언어입니다");
     }
 }

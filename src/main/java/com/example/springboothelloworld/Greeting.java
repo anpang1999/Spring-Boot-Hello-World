@@ -1,35 +1,34 @@
 package com.example.springboothelloworld;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
+@Table(name = "greetings")
 public class Greeting {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true, nullable = false)
+    @Column(name = "lang_code", nullable = false, unique = true)
     private String langCode;
 
     @Column(nullable = false)
     private String message;
 
-    // getters/setters
-
-    public Long getId() {
-        return id;
+    public String getMessage() {
+        return message;
     }
 
     public String getLangCode() {
         return langCode;
     }
 
-    public String getMessage() {
-        return message;
-    }
+    // 선택: 생성자와 setter도 필요 시 추가
+    public Greeting() {}
 
+    public Greeting(String langCode, String message) {
+        this.langCode = langCode;
+        this.message = message;
+    }
 }

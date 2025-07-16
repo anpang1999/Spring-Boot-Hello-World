@@ -7,14 +7,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class GreetingController {
-    private final GreetingService service;
 
-    public GreetingController(GreetingService service) {
-        this.service = service;
+    private final GreetingService greetingService;
+
+    public GreetingController(GreetingService greetingService) {
+        this.greetingService = greetingService;
     }
 
     @GetMapping("/greeting")
-    public String getGreeting(@RequestParam String lang) {
-        return service.getMessage(lang);
+    public String greeting(@RequestParam String lang) {
+        return greetingService.getMessageByLang(lang);
     }
 }
