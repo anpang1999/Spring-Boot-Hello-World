@@ -13,6 +13,6 @@ public class GreetingService {
     public String getMessage(String lang) {
         return repo.findByLangCode(lang)
                 .map(Greeting::getMessage)
-                .orElse("No greeting found.");
+                .orElse("지원하지 않는 언어입니다.");
     }
 }
