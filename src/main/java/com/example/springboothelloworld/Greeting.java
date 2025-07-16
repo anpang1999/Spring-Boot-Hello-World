@@ -19,4 +19,17 @@ public class Greeting {
     private String message;
 
     // getters/setters
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getLangCode() {
+        return langCode;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
 }
