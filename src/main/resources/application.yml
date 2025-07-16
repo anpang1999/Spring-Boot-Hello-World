@@ -1,12 +1,12 @@
 spring:
-    datasource:
-        url: jdbc:postgresql://localhost:5432/greetings_db
-        username: postgres
-        password: secure123!
-    jpa:
-        hibernate:
-            ddl-auto: update
-        properties:
-            hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
-        show-sql: true
-        format-sql: true
+  datasource:
+    url: jdbc:postgresql://192.168.20.228:5432/greetings_db
+    username: postgres
+    password: secure123!
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+     hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    format-sql: true
